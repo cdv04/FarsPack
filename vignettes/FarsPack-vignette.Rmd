@@ -1,0 +1,73 @@
+---
+title: FarsPack Vignette"
+author: "CDV"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r package0, echo=FALSE,warning=FALSE, message=FALSE}
+library(knitr) 
+library(maps)
+
+```
+
+## Vignette Info
+
+This is the vignette of my package named "FarsPack"
+
+This package permits to analyse data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System, which is a nationwide census providing the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes.
+
+This package permits to obtain summary statistics about juries suffered in motor vehicle traffic crashes and to map them.
+
+In order to install the package, you have to use the following line.
+
+```{r package, echo=TRUE,warning=FALSE, message=FALSE}
+library(FarsPack) 
+
+```
+
+## Functions of the package
+
+This package contains 5 functions :
+
+* fars_read()
+* make_filename()
+* fars_read_years()
+* fars_summarize_years()
+* fars_map_state ()
+
+You can  obtain help for these following functions using the following synthax.
+```{r help synthax, echo=TRUE}
+
+? fars_read()
+```
+
+
+
+## Example
+
+### Obtaining numbers of fatal injuries by month
+
+You can obtain the number of fatal injuries suffered in motor vehicle traffic crashes by month, for years 2013 and 2015 using the following lines :
+
+```{r exemple, echo=TRUE}
+
+MySummary<- fars_summarize_years(list(2013,2015))
+kable(MySummary)
+
+```
+
+
+### Mapping the fatal injuries
+
+You can map the injuries in the first state during year 2013  using the following command line
+```{r, fig.show='hold'}
+
+
+fars_map_state(1,2013)
+```
+

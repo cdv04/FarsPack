@@ -1,0 +1,18 @@
+Package: FarsPack
+Type: Package
+Title: Analyse FARS data
+Version: 0.1.0
+Author: cdv04
+Maintainer: cdv04 <cdv04@gmail.comt>
+Description: Permits to calcul the numbers of accident and map where the happened.Based on 4 functions. Contains data for 2013, 2014 and 2015.
+License: GPL
+LazyData: TRUE
+RoxygenNote: 5.0.1
+Imports: dplyr,
+      readr,
+      magrittr,
+      tidyr,
+      graphics,
+      maps,
+      testthat
+
